@@ -32,11 +32,16 @@ class AdherentController
     }
 
 
-    public function update($id, $data)
-    {
-        return $this->service->modifier($id, $data);
-    }
+    public function edit($id)
+{
+    return $this->repo->findById($id);
+}
 
+
+public function update($id,$data)
+{
+    return $this->service->modifier($id,$data);
+}
 
     public function delete($id)
     {

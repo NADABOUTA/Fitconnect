@@ -176,13 +176,10 @@
                     <td>
 
 
-                        <a href="#">
+                        <a class="btn"
+                            href="/FITCONNECT/public/index.php?action=editAdherent&id=<?= $a['id_adherent'] ?>">
 
-                            <button class="btn">
-
-                                Modifier
-
-                            </button>
+                            Modifier
 
                         </a>
 

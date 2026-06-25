@@ -58,7 +58,44 @@ case 'storeAdherent':
     }
 
 break;
+case 'editAdherent':
 
+    $controller = new AdherentController();
+
+    $adherent = $controller->edit($_GET['id']);
+
+    require_once '../views/adherents/edit.php';
+
+break;
+
+
+
+
+case 'updateAdherent':
+
+    if($_SERVER['REQUEST_METHOD']=='POST')
+    {
+
+        $controller = new AdherentController();
+
+
+        $controller->update(
+
+            $_POST['id_adherent'],
+
+            $_POST
+
+        );
+
+
+        header("Location:index.php?action=adherents");
+
+        exit();
+
+
+    }
+
+break;
 
 
     case 'deleteAdherent':
