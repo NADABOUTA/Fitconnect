@@ -6,9 +6,17 @@ require_once '../app/Repositories/AbonnementRepository.php';
 require_once '../app/Repositories/SeanceRepository.php';
 require_once '../app/Services/AbonnementService.php';
 require_once '../app/Services/AdherentService.php';
+require_once '../app/Controllers/AdherentController.php';
 
 
+$controller = new AdherentController();
+
+echo "<pre>";
+
+print_r($controller->index());
+echo "</pre>";
 $service = new AdherentService();
+
 try{
 $service->supprimer(1);
 echo "Supprimé";
@@ -18,17 +26,12 @@ echo $e->getMessage();
 }
 $service = new AbonnementService();
 
-var_dump(
-$service->abonnementValide(1)
+var_dump($service->abonnementValide(1));
 
-);
 $repo3 = new SeanceRepository();
-
 echo "<h2>Seances</h2>";
 echo "<pre>";
-
 print_r($repo3->findAll());
-
 echo "</pre>";
 
 $repo1 = new AdherentRepository();
